@@ -1,0 +1,8 @@
+redact:
+  - person_name
+  - email
+  - phone
+  - account_id
+  - support_ticket_reference
+review_action:
+  pii_detected: block_release

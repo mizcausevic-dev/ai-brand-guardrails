@@ -1,0 +1,14 @@
+stages:
+  - model_output
+  - policy_review
+  - human_approval
+  - release
+approvals:
+  human_approval:
+    - content_ops
+    - legal_review
+    - revenue_ops
+blockers:
+  - unsupported_claim
+  - pii_detected
+  - tone_mismatch

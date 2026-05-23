@@ -1,0 +1,9 @@
+voice_profile:
+  style: decisive
+  audience: revenue_and_marketing_ops
+banned_phrases:
+  - guaranteed results
+  - frictionless for everyone
+cta_rules:
+  require_clear_next_step: true
+  disallow_false_urgency: true
