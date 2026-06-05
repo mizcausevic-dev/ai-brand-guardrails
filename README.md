@@ -1,6 +1,9 @@
-# ai-brand-guardrails
+# AI Brand Guardrails
 
-AI publishing control plane for brand-safe marketing output: tone integrity, claim substantiation, PII stripping, and approval readiness before generated copy reaches live campaigns.
+Board-ready Kinetic Gain surface for enforcing brand tone, factual posture, PII stripping, and approval readiness across AI-generated marketing content.
+
+- Live: [http://brand.kineticgain.com/](http://brand.kineticgain.com/)
+- Repo: [https://github.com/mizcausevic-dev/ai-brand-guardrails](https://github.com/mizcausevic-dev/ai-brand-guardrails)
 
 ## What it shows
 
@@ -60,6 +63,7 @@ Then open:
 
 ```powershell
 npm run verify
+npm run prerender
 npm run render:assets
 ```
 
