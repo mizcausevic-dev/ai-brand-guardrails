@@ -175,11 +175,32 @@ function pageShell(title: string, activeRoute: string, body: string) {
       background: rgba(18, 29, 51, 0.6);
     }
     .spec-box strong { display: block; margin-bottom: 12px; font-size: 16px; }
+    .depth-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
+    .depth-card {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(18, 29, 51, 0.74), rgba(9, 16, 29, 0.7));
+    }
+    .depth-card h3 { margin: 10px 0; font-size: 23px; line-height: 1.14; }
+    .depth-card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.58; }
+    .site-footer {
+      margin-top: 32px;
+      padding: 20px 4px 0;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .site-footer a { color: #dce8ff; text-decoration: none; }
     code { color: #9cc6ff; font-family: var(--mono); }
     @media (max-width: 1100px) {
       .hero, .docs-note { grid-template-columns: 1fr; }
       .metric { grid-column: span 6; }
       .split-left, .split-right { grid-column: 1 / -1; }
+      .depth-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 720px) {
       .wrap { width: min(100% - 24px, 100%); }
@@ -187,6 +208,7 @@ function pageShell(title: string, activeRoute: string, body: string) {
       .metric { grid-column: 1 / -1; }
       .tabs { gap: 12px; }
       .tab { width: 100%; justify-content: center; }
+      .depth-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -209,6 +231,13 @@ function pageShell(title: string, activeRoute: string, body: string) {
     </nav>
 
     ${body}
+    <footer class="site-footer">
+      <a href="http://brand.kineticgain.com/">brand.kineticgain.com</a>
+      <a href="https://kineticgain.com/">Kinetic Gain</a>
+      <a href="https://portfolio.kineticgain.com/">Portfolio</a>
+      <a href="https://github.com/mizcausevic-dev/ai-brand-guardrails">GitHub</a>
+      <a href="/docs">Docs</a>
+    </footer>
   </div>
 </body>
 </html>`;
@@ -218,6 +247,36 @@ function statusClass(status: string) {
   if (status === "healthy") return "healthy";
   if (status === "watch") return "watch";
   return "critical";
+}
+
+function productDepthSection() {
+  return `<article class="card highlight">
+    <div class="kicker">Product depth</div>
+    <h2>AI Brand Guardrails turns generated content into a governed launch artifact.</h2>
+    <p>It connects brand safety, factual proof, privacy review, and campaign readiness so AI-assisted copy can move quickly without becoming a legal, revenue, or trust problem after publish.</p>
+    <div class="depth-grid">
+      <div class="depth-card">
+        <div class="mini">GTM analyst lens</div>
+        <h3>Protect the message-market fit layer.</h3>
+        <p>Checks whether AI-generated claims, CTAs, and channel-specific copy stay aligned with the campaign strategy, buyer segment, and approved positioning.</p>
+      </div>
+      <div class="depth-card">
+        <div class="mini">Value architect lens</div>
+        <h3>Reduce rework and reputation risk.</h3>
+        <p>Turns content defects into operating costs: legal review delays, rewritten campaigns, brand inconsistency, unsupported proof, and customer-data exposure.</p>
+      </div>
+      <div class="depth-card">
+        <div class="mini">Technical reviewer lens</div>
+        <h3>Make guardrails inspectable.</h3>
+        <p>Policy specimens, output verdicts, JSON endpoints, screenshots, and smoke checks make the control system observable instead of hidden behind prompt instructions.</p>
+      </div>
+      <div class="depth-card">
+        <div class="mini">What these repos share</div>
+        <h3>They turn invisible operating risk into decision evidence.</h3>
+        <p>Each Kinetic Gain surface names the risk, maps the owner, exposes the control plane, and gives leaders and builders the same artifact to inspect.</p>
+      </div>
+    </div>
+  </article>`;
 }
 
 export function renderOverview() {
@@ -239,6 +298,8 @@ export function renderOverview() {
           <h2>"${dashboard.recommendation}"</h2>
           <p>Best use case: revenue teams moving fast with AI-assisted content but needing a clear operator lane before outbound copy, landing pages, or nurture drafts go live.</p>
         </article>
+
+        ${productDepthSection()}
 
         <article class="card split-left">
           <div class="panel-label">Policy Surface</div>
@@ -312,6 +373,7 @@ export function renderPolicyLane() {
               .join("")}
           </div>
         </article>
+        ${productDepthSection()}
 
         <article class="card split-right">
           <div class="panel-label">Guardrail Goals</div>
@@ -357,6 +419,7 @@ export function renderOutputReview() {
               .join("")}
           </div>
         </article>
+        ${productDepthSection()}
 
         <article class="card split-right">
           <div class="panel-label">Policy Artifacts</div>
@@ -392,6 +455,7 @@ export function renderVerification() {
             ${verification().map((item) => `<li>${item}</li>`).join("")}
           </div>
         </article>
+        ${productDepthSection()}
         <article class="card split-right">
           <div class="panel-label">Operator Checkpoints</div>
           <div class="verify-list">
@@ -423,6 +487,7 @@ export function renderDocs() {
             <strong>Application shape mapping</strong>
             <p><code>src/app.ts</code> hosts HTML diagnostics and JSON review endpoints. <code>policies/</code> contains the specimen rules that drive approval and blocking posture.</p>
           </div>
+          ${productDepthSection()}
         </article>
         <aside class="card">
           <div class="panel-label">Spec Classification</div>
