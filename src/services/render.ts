@@ -271,7 +271,7 @@ function productDepthSection() {
         <p>Policy specimens, output verdicts, JSON endpoints, screenshots, and smoke checks make the control system observable instead of hidden behind prompt instructions.</p>
       </div>
       <div class="depth-card">
-        <div class="mini">What these repos share</div>
+        <div class="mini">What these repos have in common</div>
         <h3>They turn invisible operating risk into decision evidence.</h3>
         <p>Each Kinetic Gain surface names the risk, maps the owner, exposes the control plane, and gives leaders and builders the same artifact to inspect.</p>
       </div>

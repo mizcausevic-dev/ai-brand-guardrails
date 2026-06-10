@@ -5,7 +5,7 @@ Board-ready Kinetic Gain surface for enforcing brand tone, factual posture, PII 
 - Live: [http://brand.kineticgain.com/](http://brand.kineticgain.com/)
 - Repo: [https://github.com/mizcausevic-dev/ai-brand-guardrails](https://github.com/mizcausevic-dev/ai-brand-guardrails)
 
-## What this product does
+## Product depth
 
 AI Brand Guardrails turns generated content into a governed launch artifact. It connects brand safety, factual proof, privacy review, and campaign readiness so AI-assisted copy can move quickly without becoming a legal, revenue, or trust problem after publish.
 
